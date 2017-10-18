@@ -1,1 +1,1 @@
-ssertpy==0.11
+assertpy==0.11
