@@ -2,7 +2,7 @@ from io import StringIO
 
 from assertpy import assert_that
 
-from dsfkit.csvjson import CsvJson
+from dsfkit.utilities.csvjson import CsvJson
 
 
 class TestCsvJson:
@@ -20,3 +20,13 @@ class TestCsvJson:
 
         assert_that(csv_json.convert(StringIO("last_name,first_name\nSmith,John"))) \
             .is_equal_to('[{"first_name": "John", "last_name": "Smith"}]')
+
+    def test_pretty_print(self):
+        csv_json = CsvJson(pretty_print=True)
+        assert_that(csv_json.convert(StringIO("first_name,last_name\nJohn,Smith"))) \
+            .is_equal_to('[\n'
+                         '    {\n'
+                         '        "first_name": "John",\n'
+                         '        "last_name": "Smith"\n'
+                         '    }\n'
+                         ']')
