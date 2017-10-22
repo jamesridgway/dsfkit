@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='dfskit',
-    version='0.0.2',
+    version='0.0.3',
     description='A suite of utilities for converting and working with data serialization formats',
     long_description=open('README.rst').read(),
     author='James Ridgway',
