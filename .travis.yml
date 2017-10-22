@@ -1,12 +1,17 @@
 language: python
 python:
-  - "3.4"
-  - "3.5"
-  - "3.6"
-  - "nightly"
-# command to install dependencies
+- '3.4'
+- '3.5'
+- '3.6'
+- nightly
 install:
-  - pip install -r requirements.txt
-# command to run tests
+- pip install -r requirements.txt
 script:
-  - py.test
+- py.test
+deploy:
+  user: "jamesridgway"
+  password:
+    secure: AC57ZnzCyRBreNrhlPIa4AjFe2Y/adTpNIOPN/b2ScWbkeHU5xMj5oGGXbYRk7tFTCx0zsaA39ak652kWVo5PdHgbmSY5HIwMk4hmKaCfaFFVu019VDgwSSmYqES0XlXi09i0GLHTxIqLv5PQJCoZdVoo92ItBeXd+UMkUOgyxuILHbw8DJLTcrS+fZtWl7TIB0tk+k31+/LiKFx45/CPzdOe6k7AWUTfdQv42NjdK/c/fGrnJ1PrRf0PvwWhGgeQJBJ4l5lyXwpCrr8qqS+cKTcTHIH1JxOlXUjFeiWyk7w6atQTqQHHlVbiXtxcA8lJFDWd/U8PjEvsiSmfP9PDXz3mW+Az3HG1/FHse1VI2Yl2cm2BabOzQfRNSmsrLxTQhm+m2Ry8eWWVXTmCAPBW/YzIUOhXa8vS5jbecCRAlQSevpWFLey0uq9rGp1YW+I2hD/zYB3Tk9/B4uR7q78st16jd6t0mS2Iv/83LEWzfTOC0dPgv0K/HYzYz3iuV6czcEZmnfzU30nMo7ygCdMuFLcSGteOlX3yGdVHCz2e10ddA3o2licX9QausvUnQH2GP937y3nNJUi8X8InjJG31kO3okCowIxDTUMOKLbbogvfWiGomWXW04AJOPCzv5rDAqKq2Rk/5e07L2YfEOwdOp8oTpkdQkDVOG0vP0nIbk=
+  on:
+    tags: true
+    branch: master
